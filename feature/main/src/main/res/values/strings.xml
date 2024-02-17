@@ -1,0 +1,17 @@
+<resources>
+    <string name="agents">Agents</string>
+    <string name="weapons">Weapons</string>
+    <string name="tryAgain">Try Again?</string>
+    <string name="refresh">TRY</string>
+    <string name="stats">Stats</string>
+    <string name="shop">%s - %s</string>
+    <string name="equip">Equip time: %s sec</string>
+    <string name="fire">Fire Rate: %s</string>
+    <string name="size">Magazine Size: %s</string>
+    <string name="reload">Reload Time: %s sec</string>
+    <string name="damage">Damage Ranges</string>
+    <string name="range">%.0f - %.0f metres</string>
+    <string name="head">Head - %.1f</string>
+    <string name="body">Body - %.1f</string>
+    <string name="leg">Leg - %.1f</string>
+</resources>
