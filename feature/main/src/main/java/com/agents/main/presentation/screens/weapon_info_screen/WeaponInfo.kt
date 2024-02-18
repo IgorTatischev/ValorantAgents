@@ -72,59 +72,64 @@ fun WeaponInfo(weapon: Weapon, paddingValues: PaddingValues) {
 
             Text(text = weapon.displayName, style = MaterialTheme.typography.headlineLarge)
 
-            Text(
-                text = stringResource(
-                    id = R.string.shop,
-                    weapon.shopData?.category.toString(),
-                    weapon.shopData?.cost.toString()
-                ),
-                style = MaterialTheme.typography.headlineSmall
-            )
+            if (weapon.shopData != null) {
+                Text(
+                    text = stringResource(
+                        id = R.string.shop,
+                        weapon.shopData.category.toString(),
+                        weapon.shopData.cost.toString()
+                    ),
+                    style = MaterialTheme.typography.headlineSmall
+                )
+            }
 
-            Spacer(modifier = Modifier.height(10.dp))
-            Text(
-                text = stringResource(id = R.string.stats),
-                style = MaterialTheme.typography.headlineMedium
-            )
+            if (weapon.weaponStats != null) {
 
-            StatsText(
-                stat = weapon.weaponStats?.magazineSize.toString(),
-                resId = R.string.size
-            )
-            StatsText(
-                stat = weapon.weaponStats?.equipTimeSeconds.toString(),
-                resId = R.string.equip
-            )
-            StatsText(
-                stat = weapon.weaponStats?.reloadTimeSeconds.toString(),
-                resId = R.string.reload
-            )
-            StatsText(stat = weapon.weaponStats?.fireRate.toString(), resId = R.string.fire)
+                Spacer(modifier = Modifier.height(10.dp))
+                Text(
+                    text = stringResource(id = R.string.stats),
+                    style = MaterialTheme.typography.headlineMedium
+                )
 
-            Spacer(modifier = Modifier.height(10.dp))
-            Text(
-                text = stringResource(id = R.string.damage),
-                style = MaterialTheme.typography.headlineMedium
-            )
+                StatsText(
+                    stat = weapon.weaponStats.magazineSize.toString(),
+                    resId = R.string.size
+                )
+                StatsText(
+                    stat = weapon.weaponStats.equipTimeSeconds.toString(),
+                    resId = R.string.equip
+                )
+                StatsText(
+                    stat = weapon.weaponStats.reloadTimeSeconds.toString(),
+                    resId = R.string.reload
+                )
+                StatsText(stat = weapon.weaponStats.fireRate.toString(), resId = R.string.fire)
 
-            weapon.weaponStats?.damageRanges?.forEach { range ->
-                ExpandedCard(
-                    header = stringResource(
-                        id = R.string.range,
-                        range.rangeStartMeters,
-                        range.rangeEndMeters
-                    )
-                ) {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 15.dp, bottom = 15.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                Spacer(modifier = Modifier.height(10.dp))
+                Text(
+                    text = stringResource(id = R.string.damage),
+                    style = MaterialTheme.typography.headlineMedium
+                )
+
+                weapon.weaponStats.damageRanges?.forEach { range ->
+                    ExpandedCard(
+                        header = stringResource(
+                            id = R.string.range,
+                            range.rangeStartMeters,
+                            range.rangeEndMeters
+                        )
                     ) {
-                        CompositionLocalProvider(LocalTextStyle provides MaterialTheme.typography.titleLarge) {
-                            Text(text = stringResource(id = R.string.head, range.headDamage))
-                            Text(text = stringResource(id = R.string.body, range.bodyDamage))
-                            Text(text = stringResource(id = R.string.leg, range.legDamage))
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(start = 15.dp, bottom = 15.dp),
+                            verticalArrangement = Arrangement.spacedBy(10.dp)
+                        ) {
+                            CompositionLocalProvider(LocalTextStyle provides MaterialTheme.typography.titleLarge) {
+                                Text(text = stringResource(id = R.string.head, range.headDamage))
+                                Text(text = stringResource(id = R.string.body, range.bodyDamage))
+                                Text(text = stringResource(id = R.string.leg, range.legDamage))
+                            }
                         }
                     }
                 }

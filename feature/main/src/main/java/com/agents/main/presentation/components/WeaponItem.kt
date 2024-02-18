@@ -14,17 +14,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.agents.main.domain.model.weapons.Weapon
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WeaponItem(item: Weapon, onClick: () -> Unit) {
-    OutlinedCard(
+    AnimatedBorderCard(
         modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp),
-        onClick = onClick
+        onClick = onClick,
+        gradient = Brush.sweepGradient(
+            listOf(
+                MaterialTheme.colorScheme.primaryContainer,
+                MaterialTheme.colorScheme.onPrimary,
+                MaterialTheme.colorScheme.primaryContainer,
+            )
+        ),
     ) {
         Row(
             modifier = Modifier
@@ -53,7 +60,7 @@ fun WeaponItem(item: Weapon, onClick: () -> Unit) {
             TintImage(
                 modifier = Modifier
                     .weight(3f)
-                    .size(50.dp)
+                    .size(60.dp)
                     .padding(end = 15.dp),
                 imageUri = item.killStreamIcon,
                 tint = MaterialTheme.colorScheme.primaryContainer

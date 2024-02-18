@@ -17,7 +17,6 @@ fun TintImage(modifier: Modifier = Modifier, imageUri: String, tint: Color = Col
             .data(imageUri)
             .crossfade(true)
             .build(),
-        contentScale = ContentScale.Crop,
         contentDescription = null,
         colorFilter = ColorFilter.tint(tint)
     )
