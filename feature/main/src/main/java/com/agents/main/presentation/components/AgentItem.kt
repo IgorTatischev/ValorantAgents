@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
 import com.agents.main.domain.model.agents.Agent
+import com.agents.main.presentation.util.fromHex
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -90,6 +91,3 @@ fun AgentImage(modifier: Modifier = Modifier, imageUri: String){
         contentDescription = null,
     )
 }
-
-fun Color.Companion.fromHex(colorString: String) =
-    Color(android.graphics.Color.parseColor("#$colorString"))

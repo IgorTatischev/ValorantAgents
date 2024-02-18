@@ -16,8 +16,11 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -26,6 +29,7 @@ import coil.request.ImageRequest
 import com.agents.main.domain.model.agents.Agent
 import com.agents.main.presentation.components.AbilityItem
 import com.agents.main.presentation.components.TintImage
+import com.agents.main.presentation.util.fromHex
 
 @Composable
 fun AgentInfo(agent: Agent, paddingValues: PaddingValues) {
@@ -76,8 +80,14 @@ fun AgentInfo(agent: Agent, paddingValues: PaddingValues) {
 
         Text(text = agent.description, style = MaterialTheme.typography.bodyLarge)
 
+        val colorList = remember { mutableStateListOf<Color>() }
+        agent.backgroundGradientColors.forEach {
+            val color = Color.fromHex(it.take(6))
+            colorList.add(color)
+        }
+
         agent.abilities.forEach { ability ->
-            AbilityItem(item = ability)
+            AbilityItem(item = ability, colorList)
         }
     }
 }

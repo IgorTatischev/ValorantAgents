@@ -1,5 +1,6 @@
 package com.agents.main.presentation.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,6 +28,7 @@ fun SkinItem(skin: Skin) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp),
+        border = BorderStroke(width = 2.dp, color = MaterialTheme.colorScheme.primaryContainer)
     ) {
         Box(
             modifier = Modifier
