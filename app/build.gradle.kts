@@ -80,6 +80,7 @@ dependencies {
     implementation(Dependencies.Compose.toolingPreview)
     debugImplementation(Dependencies.Compose.debugUiTooling)
     debugImplementation(Dependencies.Compose.debugAndroidCompose)
+    debugImplementation(Dependencies.Compose.splash)
 
     implementation(Dependencies.Dependencies.koin_android)
     implementation(Dependencies.Dependencies.koin_compose)
