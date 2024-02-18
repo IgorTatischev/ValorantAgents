@@ -1,18 +1,18 @@
 plugins {
-    id(Dependencies.Plugins.android_application)
-    id(Dependencies.Plugins.kotlin_android)
+    id(Plugins.android_application)
+    id(Plugins.kotlin_android)
 }
 
 android {
-    namespace = Dependencies.Application.appId
-    compileSdk = Versions.compileSDK
+    namespace = Application.appId
+    compileSdk = Application.compileSDK
 
     defaultConfig {
-        applicationId = Dependencies.Application.appId
-        minSdk = Versions.minsdk
-        targetSdk = Versions.targetsdk
-        versionCode = Dependencies.Application.version_code
-        versionName = Dependencies.Application.version_name
+        applicationId = Application.appId
+        minSdk = Application.minsdk
+        targetSdk = Application.targetsdk
+        versionCode = Application.version_code
+        versionName = Application.version_name
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -23,8 +23,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = Dependencies.Application.releaseMinify
-            isShrinkResources = Dependencies.Application.releaseMinify
+            isMinifyEnabled = Application.releaseMinify
+            isShrinkResources = Application.releaseMinify
 
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -33,8 +33,8 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
         debug {
-            isMinifyEnabled = Dependencies.Application.debugMinify
-            isShrinkResources = Dependencies.Application.debugMinify
+            isMinifyEnabled = Application.debugMinify
+            isShrinkResources = Application.debugMinify
 
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -43,11 +43,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = Dependencies.Java.java_compile
-        targetCompatibility = Dependencies.Java.java_compile
+        sourceCompatibility = Application.Java.java_compile
+        targetCompatibility = Application.Java.java_compile
     }
     kotlinOptions {
-        jvmTarget = Dependencies.Java.java_versions
+        jvmTarget = Application.Java.java_versions
     }
     buildFeatures {
         compose = true
@@ -63,9 +63,9 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Dependencies.android_core_ktx)
-    implementation(Dependencies.Dependencies.lifecycle_runtime)
-    implementation(Dependencies.Dependencies.material)
+    implementation(Dependencies.android_core_ktx)
+    implementation(Dependencies.lifecycle_runtime)
+    implementation(Dependencies.material)
     implementation(Dependencies.Compose.activityCompose)
     implementation(platform(Dependencies.Compose.composeBoom))
     implementation(Dependencies.Compose.composeUi)
@@ -75,15 +75,15 @@ dependencies {
     implementation(Dependencies.Compose.serviceView)
     implementation(Dependencies.Compose.systemUiController)
     implementation(Dependencies.Compose.material3)
-    implementation(Dependencies.Dependencies.window)
+    implementation(Dependencies.window)
     implementation(Dependencies.Compose.compose_permissions)
     implementation(Dependencies.Compose.toolingPreview)
     debugImplementation(Dependencies.Compose.debugUiTooling)
     debugImplementation(Dependencies.Compose.debugAndroidCompose)
     debugImplementation(Dependencies.Compose.splash)
 
-    implementation(Dependencies.Dependencies.koin_android)
-    implementation(Dependencies.Dependencies.koin_compose)
+    implementation(Dependencies.koin_android)
+    implementation(Dependencies.koin_compose)
 
     implementation(project(Modules.featureMain))
 }

@@ -1,8 +1,5 @@
 object Versions {
     const val gradle = "8.1.0"
-    const val compileSDK = 34
-    const val minsdk = 24
-    const val targetsdk = 34
     const val kotlin = "1.8.10"
     const val ktx = "1.10.1"
     const val kotlin_coroutines = "1.7.1"

@@ -5,12 +5,13 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath(Dependencies.Plugins.android_build_gradle)
-        classpath(Dependencies.Plugins.kotlin_version)
+        classpath(Plugins.android_build_gradle)
+        classpath(Plugins.kotlin_version)
     }
 }
+
 plugins {
-    id(Dependencies.Plugins.ksp) version ("1.8.10-1.0.9") apply false
+    id(Plugins.ksp) version ("1.8.10-1.0.9") apply false
 }
 
 allprojects {
