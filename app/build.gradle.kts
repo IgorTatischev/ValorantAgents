@@ -70,6 +70,7 @@ dependencies {
     implementation(platform(Dependencies.Compose.composeBoom))
     implementation(Dependencies.Compose.composeUi)
     implementation(Dependencies.Compose.composeUiGraphics)
+    implementation(Dependencies.Compose.composeUiGraphicsFont)
     implementation(Dependencies.Compose.composeFoundation)
     implementation(Dependencies.Compose.serviceView)
     implementation(Dependencies.Compose.systemUiController)

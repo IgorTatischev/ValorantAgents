@@ -48,6 +48,7 @@ object Dependencies {
         const val composeFoundation = "androidx.compose.foundation:foundation"
         const val composeUi = "androidx.compose.ui:ui"
         const val composeUiGraphics = "androidx.compose.ui:ui-graphics"
+        const val composeUiGraphicsFont = "androidx.compose.ui:ui-text-google-fonts:1.6.1"
 
         /**
          * Android Studio Preview support

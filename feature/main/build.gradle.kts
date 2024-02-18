@@ -58,6 +58,7 @@ dependencies {
     implementation(Dependencies.Compose.activityCompose)
     implementation(Dependencies.Compose.composeUi)
     implementation(Dependencies.Compose.composeUiGraphics)
+    implementation(Dependencies.Compose.composeUiGraphicsFont)
     implementation(Dependencies.Compose.composeFoundation)
     implementation(Dependencies.Compose.material3)
     implementation(Dependencies.Compose.compose_permissions)
