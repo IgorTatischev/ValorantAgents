@@ -65,6 +65,7 @@
 -keep interface okhttp3.** { *; }
 -dontwarn okhttp3.**
 -keepattributes Exceptions
+-dontwarn java.lang.invoke.**
 
 
 -keepattributes Signature, InnerClasses, EnclosingMethod
@@ -77,5 +78,11 @@
 -keepclassmembers,allowobfuscation class * {
   @com.google.gson.annotations.SerializedName <fields>;
 }
+
+-keep class retrofit2.** { *; }
+-keep interface retrofit2.** { *; }
+
+-keep,allowobfuscation,allowshrinking interface retrofit2.Call
+-keep,allowobfuscation,allowshrinking class retrofit2.Response
 
 -dontwarn java.lang.invoke.StringConcatFactory

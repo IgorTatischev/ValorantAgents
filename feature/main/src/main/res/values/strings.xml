@@ -10,7 +10,7 @@
     <string name="size">Magazine Size: %s</string>
     <string name="reload">Reload Time: %s sec</string>
     <string name="damage">Damage Ranges</string>
-    <string name="range">%.0f - %.0f metres</string>
+    <string name="range">%s - %s metres</string>
     <string name="head">Head - %.1f</string>
     <string name="body">Body - %.1f</string>
     <string name="leg">Leg - %.1f</string>

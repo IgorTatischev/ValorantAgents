@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import com.agents.main.R
+import com.agents.main.presentation.components.CustomSnackbar
 import com.agents.main.presentation.components.ErrorScreen
 import com.agents.main.presentation.components.InfoTopBar
 import com.agents.main.presentation.components.LoadingScreen
@@ -67,7 +68,7 @@ fun WeaponInfoScreen(
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        snackbarHost = { SnackbarHost(snackbarHostState) },
+        snackbarHost = { SnackbarHost(snackbarHostState) { CustomSnackbar(snackbarData = it) } },
         topBar = {
             InfoTopBar(
                 onClick = { viewModel.dispatch(event = WeaponInfoScreenEvent.PopBack) },

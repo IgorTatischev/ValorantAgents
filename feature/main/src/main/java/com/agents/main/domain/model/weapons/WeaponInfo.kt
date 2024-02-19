@@ -3,6 +3,7 @@ package com.agents.main.domain.model.weapons
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class WeaponInfo(
     @SerializedName("data")
     val weapon: Weapon,
@@ -39,13 +40,13 @@ data class WeaponStats(
     val fireRate: Double?,
     val magazineSize: Int?,
     val reloadTimeSeconds: Double?,
-    val damageRanges: List<DamageRanges>?,
+    val damageRanges: List<DamageRange>?,
 )
 
 @Keep
-data class DamageRanges(
-    val rangeStartMeters: Double,
-    val rangeEndMeters: Double,
+data class DamageRange(
+    val rangeStartMeters: Int,
+    val rangeEndMeters: Int,
     val headDamage: Double,
     val bodyDamage: Double,
     val legDamage: Double,

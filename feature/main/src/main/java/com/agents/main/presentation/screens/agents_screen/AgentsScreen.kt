@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.agents.main.R
 import com.agents.main.domain.model.agents.Agent
 import com.agents.main.presentation.components.AgentItem
+import com.agents.main.presentation.components.CustomSnackbar
 import com.agents.main.presentation.components.ErrorScreen
 import com.agents.main.presentation.components.LoadingScreen
 import com.agents.main.presentation.core.AgentsNavGraph
@@ -70,7 +71,9 @@ fun AgentsScreen(
         }
     }
 
-    Scaffold(snackbarHost = { SnackbarHost(snackbarHostState) }) { paddingValues ->
+    Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) { CustomSnackbar(snackbarData = it) } },
+    ) { paddingValues ->
         when (state) {
 
             is AgentsScreenState.Loading -> LoadingScreen()

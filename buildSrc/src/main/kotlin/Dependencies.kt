@@ -1,13 +1,9 @@
+
 object Dependencies {
     object Compose {
         const val kotlinCompiler = "1.4.3"
-        private const val accompanist = "0.33.0-alpha"
-        private const val coil = "2.4.0"
-
         private const val composeBoomVersion = "2023.08.00"
-
         const val composeBoom = "androidx.compose:compose-bom:$composeBoomVersion"
-
         /**
          * choice one
          */
@@ -17,7 +13,7 @@ object Dependencies {
         const val composeUi = "androidx.compose.ui:ui"
         const val composeUiGraphics = "androidx.compose.ui:ui-graphics"
         const val composeUiGraphicsFont = "androidx.compose.ui:ui-text-google-fonts:1.6.1"
-        const val splash = "androidx.core:core-splashscreen:1.0.0"
+        const val splash = "androidx.core:core-splashscreen:1.0.1"
 
         /**
          * Android Studio Preview support
@@ -43,7 +39,7 @@ object Dependencies {
         const val windowsSizeUtils = "androidx.compose.material3:material3-window-size-class"
 
         // Optional - Integration with activities
-        const val activityCompose = "androidx.activity:activity-compose:1.7.2"
+        const val activityCompose = "androidx.activity:activity-compose:1.8.0"
 
         // Optional - Integration with ViewModels
         const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
@@ -54,19 +50,19 @@ object Dependencies {
         // Optional - Integration with RxJava
         const val rxJavaCompose = "androidx.compose.runtime:runtime-rxjava2"
 
-        const val coilCompose = "io.coil-kt:coil-compose:$coil"
-        const val coilSvg = "io.coil-kt:coil-svg:$coil"
-        const val coilGifs = "io.coil-kt:coil-gif:$coil"
+        const val coilCompose = "io.coil-kt:coil-compose:${Versions.coil}"
+        const val coilSvg = "io.coil-kt:coil-svg:${Versions.coil}"
+        const val coilGifs = "io.coil-kt:coil-gif:${Versions.coil}"
 
-        const val serviceView = "com.google.accompanist:accompanist-webview:$accompanist"
+        const val serviceView = "com.google.accompanist:accompanist-webview:${Versions.accompanist}"
         const val compose_permissions =
             "com.google.accompanist:accompanist-permissions:${Versions.accompanist}"
 
         const val navigation =
-            "com.google.accompanist:accompanist-navigation-animation:$accompanist"
-        const val permission = "com.google.accompanist:accompanist-permissions:$accompanist"
+            "com.google.accompanist:accompanist-navigation-animation:${Versions.accompanist}"
+        const val permission = "com.google.accompanist:accompanist-permissions:${Versions.accompanist}"
         const val systemUiController =
-            "com.google.accompanist:accompanist-systemuicontroller:$accompanist"
+            "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}"
 
         const val destinations =
             "io.github.raamcosta.compose-destinations:core:${Versions.destinations}"

@@ -26,7 +26,6 @@ dependencies {
     implementation(Dependencies.Compose.compose_permissions)
     implementation(Dependencies.window)
     implementation(Dependencies.Compose.fullSetIconsCompose)
-    implementation(Dependencies.Compose.lottie)
 
     //koin
     implementation(Dependencies.koin_android)

@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.agents.main.R
 import com.agents.main.domain.model.weapons.Weapon
+import com.agents.main.presentation.components.CustomSnackbar
 import com.agents.main.presentation.components.ErrorScreen
 import com.agents.main.presentation.components.LoadingScreen
 import com.agents.main.presentation.components.WeaponItem
@@ -65,7 +66,9 @@ fun WeaponsScreen(viewModel: WeaponsViewModel = koinViewModel(), navigator: Dest
         }
     }
 
-    Scaffold(snackbarHost = { SnackbarHost(snackbarHostState) }) { paddingValues ->
+    Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) { CustomSnackbar(snackbarData = it) } },
+    ) { paddingValues ->
         when (state) {
 
             is WeaponsScreenState.Loading -> LoadingScreen()

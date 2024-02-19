@@ -47,3 +47,42 @@
 -keepclassmembers class * {
     @android.webkit.JavascriptInterface <methods>;
 }
+
+-renamesourcefileattribute SourceFile
+-repackageclasses
+
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
+-dontusemixedcaseclassnames
+-dontwarn retrofit2.KotlinExtensions$*
+-dontwarn retrofit2.KotlinExtensions
+
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-dontwarn okhttp3.**
+-keepattributes Exceptions
+-dontwarn java.lang.invoke.**
+
+
+-keepattributes Signature, InnerClasses, EnclosingMethod
+-keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
+-keepattributes AnnotationDefault
+
+-dontwarn javax.annotation.**
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+
+-keepclassmembers,allowobfuscation class * {
+  @com.google.gson.annotations.SerializedName <fields>;
+}
+
+-keep class retrofit2.** { *; }
+-keep interface retrofit2.** { *; }
+
+-keep,allowobfuscation,allowshrinking interface retrofit2.Call
+-keep,allowobfuscation,allowshrinking class retrofit2.Response
+
+-dontwarn java.lang.invoke.StringConcatFactory

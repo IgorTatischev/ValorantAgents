@@ -78,9 +78,10 @@ dependencies {
     implementation(Dependencies.window)
     implementation(Dependencies.Compose.compose_permissions)
     implementation(Dependencies.Compose.toolingPreview)
+    implementation(Dependencies.Compose.splash)
     debugImplementation(Dependencies.Compose.debugUiTooling)
     debugImplementation(Dependencies.Compose.debugAndroidCompose)
-    debugImplementation(Dependencies.Compose.splash)
+
 
     implementation(Dependencies.koin_android)
     implementation(Dependencies.koin_compose)
