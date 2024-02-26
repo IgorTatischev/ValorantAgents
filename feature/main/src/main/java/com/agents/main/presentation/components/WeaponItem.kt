@@ -18,9 +18,6 @@ import com.agents.main.domain.model.weapons.Weapon
 @Composable
 fun WeaponItem(item: Weapon, onClick: () -> Unit) {
     AnimatedBorderCard(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(10.dp),
         onClick = onClick,
         gradient = Brush.sweepGradient(
             listOf(

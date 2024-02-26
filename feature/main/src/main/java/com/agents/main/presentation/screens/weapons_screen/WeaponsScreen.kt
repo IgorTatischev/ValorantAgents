@@ -1,5 +1,6 @@
 package com.agents.main.presentation.screens.weapons_screen
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import com.agents.main.R
 import com.agents.main.domain.model.weapons.Weapon
 import com.agents.main.presentation.components.CustomSnackbar
@@ -94,7 +96,11 @@ fun WeaponsLazyColumn(
             .fillMaxSize()
             .padding(paddingValues)
     ) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            contentPadding = PaddingValues(horizontal = 10.dp)
+        ) {
             items(items = weapons) { weapon ->
                 WeaponItem(item = weapon) { onClick(weapon.uuid) }
             }

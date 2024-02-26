@@ -30,18 +30,13 @@ import com.agents.main.presentation.util.fromHex
 @Composable
 fun AgentItem(item: Agent, onClick: () -> Unit) {
 
-    val colorList = remember { mutableStateListOf<Color>()}
+    val colorList = remember { mutableStateListOf<Color>() }
     item.backgroundGradientColors.forEach {
         val color = Color.fromHex(it.take(6))
         colorList.add(color)
     }
 
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(2.dp),
-        onClick = onClick
-    ) {
+    Card(onClick = onClick) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -80,7 +75,7 @@ fun AgentItem(item: Agent, onClick: () -> Unit) {
 }
 
 @Composable
-fun AgentImage(modifier: Modifier = Modifier, imageUri: String){
+fun AgentImage(modifier: Modifier = Modifier, imageUri: String) {
     SubcomposeAsyncImage(
         modifier = modifier,
         model = ImageRequest.Builder(LocalContext.current)

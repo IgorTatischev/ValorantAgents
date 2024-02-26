@@ -100,12 +100,11 @@ fun AgentsLazyColumn(
             .padding(paddingValues)
     ) {
         LazyVerticalStaggeredGrid(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(10.dp),
+            modifier = Modifier.fillMaxSize(),
             columns = StaggeredGridCells.Fixed(2),
             verticalItemSpacing = 10.dp,
-            horizontalArrangement = Arrangement.spacedBy(10.dp)
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            contentPadding = PaddingValues(horizontal = 10.dp)
         ) {
             items(items = agents) { agent ->
                 AgentItem(item = agent) { onClick(agent.uuid) }
