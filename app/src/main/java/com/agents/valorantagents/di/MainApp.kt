@@ -15,11 +15,7 @@ class MainApp : Application() {
             androidContext(this@MainApp)
             androidLogger()
             modules(
-                listOf(
-                    MainModule.dataModule,
-                    MainModule.domainModule,
-                    MainModule.viewModelModule,
-                )
+                MainModule()
             )
         }
     }

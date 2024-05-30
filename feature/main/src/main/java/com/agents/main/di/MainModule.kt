@@ -24,7 +24,11 @@ private const val BASE_URL = "https://valorant-api.com/v1/"
 
 object MainModule {
 
-    val dataModule = module {
+    operator fun invoke() = module {
+        includes(dataModule, domainModule, viewModelModule)
+    }
+
+    private val dataModule = module {
 
         single {
             HttpLoggingInterceptor().apply {
@@ -52,14 +56,14 @@ object MainModule {
 
     }
 
-    val domainModule = module {
+    private val domainModule = module {
         single { GetAgents(repository = get()) }
         single { GetAgentInfo(repository = get()) }
         single { GetWeapons(repository = get()) }
         single { GetWeaponInfo(repository = get()) }
     }
 
-    val viewModelModule = module {
+    private val viewModelModule = module {
         viewModelOf(::AgentsScreenViewModel)
         viewModelOf(::AgentInfoViewModel)
         viewModelOf(::WeaponsViewModel)
