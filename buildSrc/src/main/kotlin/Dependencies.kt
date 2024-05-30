@@ -44,23 +44,12 @@ object Dependencies {
         // Optional - Integration with ViewModels
         const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
 
-        // Optional - Integration with LiveData
-        const val liveDataCompose = "androidx.compose.runtime:runtime-livedata"
-
-        // Optional - Integration with RxJava
-        const val rxJavaCompose = "androidx.compose.runtime:runtime-rxjava2"
-
         const val coilCompose = "io.coil-kt:coil-compose:${Versions.coil}"
         const val coilSvg = "io.coil-kt:coil-svg:${Versions.coil}"
         const val coilGifs = "io.coil-kt:coil-gif:${Versions.coil}"
 
-        const val serviceView = "com.google.accompanist:accompanist-webview:${Versions.accompanist}"
         const val compose_permissions =
             "com.google.accompanist:accompanist-permissions:${Versions.accompanist}"
-
-        const val navigation =
-            "com.google.accompanist:accompanist-navigation-animation:${Versions.accompanist}"
-        const val permission = "com.google.accompanist:accompanist-permissions:${Versions.accompanist}"
         const val systemUiController =
             "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}"
 
@@ -102,7 +91,6 @@ object Dependencies {
 
     const val datastore = "androidx.datastore:datastore-preferences:${Versions.datastore}"
     const val dataStoreProto = "androidx.datastore:datastore:${Versions.datastore}"
-
 
     const val koin_android = "io.insert-koin:koin-android:${Versions.koin_version}"
     const val koin_compose = "io.insert-koin:koin-androidx-compose:${Versions.koin_version}"

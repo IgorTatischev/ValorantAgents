@@ -72,7 +72,6 @@ dependencies {
     implementation(Dependencies.Compose.composeUiGraphics)
     implementation(Dependencies.Compose.composeUiGraphicsFont)
     implementation(Dependencies.Compose.composeFoundation)
-    implementation(Dependencies.Compose.serviceView)
     implementation(Dependencies.Compose.systemUiController)
     implementation(Dependencies.Compose.material3)
     implementation(Dependencies.window)
@@ -81,7 +80,6 @@ dependencies {
     implementation(Dependencies.Compose.splash)
     debugImplementation(Dependencies.Compose.debugUiTooling)
     debugImplementation(Dependencies.Compose.debugAndroidCompose)
-
 
     implementation(Dependencies.koin_android)
     implementation(Dependencies.koin_compose)
